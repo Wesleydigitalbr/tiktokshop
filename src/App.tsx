@@ -462,18 +462,28 @@ function App() {
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <ScrollReveal direction="up" delay={0}>
             <div style={{ maxWidth: 460, margin: '-10px auto 12px' }}>
-              <img
-                src="assets/proof-image.png"
-                alt="Prova social - Método CAC"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: 240,
-                  borderRadius: 16,
-                  display: 'block',
-                  objectFit: 'contain',
-                }}
-              />
+              <picture>
+                <source
+                  srcSet="assets/proof-image-480.webp 480w, assets/proof-image.webp 800w"
+                  sizes="(max-width: 639px) 480px, 460px"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/proof-image.png"
+                  alt="Prova social - Método CAC"
+                  loading="lazy"
+                  width="460"
+                  height="240"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: 240,
+                    borderRadius: 16,
+                    display: 'block',
+                    objectFit: 'contain',
+                  }}
+                />
+              </picture>
             </div>
           </ScrollReveal>
 
@@ -513,15 +523,24 @@ function App() {
                 <path className="node-line node-line-secondary" d="M 450 380 Q 450 300 450 210" />
               </svg>
               <div className="satellite-card satellite-left glass glass-hover">
-                <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" />
+                <picture>
+                  <source srcSet="assets/tiktok-shop-page-480.webp 480w, assets/tiktok-shop-page.webp 637w" sizes="(max-width: 639px) 300px, 220px" type="image/webp" />
+                  <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" loading="lazy" width="220" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} />
+                </picture>
                 <div className="satellite-card-caption">TikTok Shop</div>
               </div>
               <div className="satellite-card satellite-right glass glass-hover">
-                <img src="assets/satellite-2.jpg" alt="IA Generativa" />
+                <picture>
+                  <source srcSet="assets/satellite-2-480.webp 480w, assets/satellite-2.webp 800w" sizes="(max-width: 639px) 300px, 220px" type="image/webp" />
+                  <img src="assets/satellite-2.jpg" alt="IA Generativa" loading="lazy" width="220" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} />
+                </picture>
                 <div className="satellite-card-caption">IA Generativa</div>
               </div>
               <div className="satellite-card satellite-bottom glass glass-hover" style={{ width: 180 }}>
-                <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" />
+                <picture>
+                  <source srcSet="assets/tiktok-shop-ganhos-480.webp 480w, assets/tiktok-shop-ganhos.webp 546w" sizes="(max-width: 639px) 300px, 180px" type="image/webp" />
+                  <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" loading="lazy" width="180" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} />
+                </picture>
                 <div className="satellite-card-caption">Comissões</div>
               </div>
             </div>
@@ -530,11 +549,29 @@ function App() {
           {/* Mobile workflow */}
           <ScrollReveal direction="right" delay={300} duration={800}>
             <div className="workflow-vertical">
-              <div className="wf-card"><img src="assets/tiktok-shop-page.png" alt="TikTok Shop" /><div className="wf-caption">TikTok Shop</div></div>
+              <div className="wf-card">
+                <picture>
+                  <source srcSet="assets/tiktok-shop-page-480.webp 480w, assets/tiktok-shop-page.webp 637w" sizes="300px" type="image/webp" />
+                  <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} />
+                </picture>
+                <div className="wf-caption">TikTok Shop</div>
+              </div>
               <div className="wf-connector"><div className="wf-line" /><div className="wf-node" /><div className="wf-line" /></div>
-              <div className="wf-card"><img src="assets/satellite-2.jpg" alt="IA Generativa" /><div className="wf-caption">IA Generativa</div></div>
+              <div className="wf-card">
+                <picture>
+                  <source srcSet="assets/satellite-2-480.webp 480w, assets/satellite-2.webp 800w" sizes="300px" type="image/webp" />
+                  <img src="assets/satellite-2.jpg" alt="IA Generativa" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} />
+                </picture>
+                <div className="wf-caption">IA Generativa</div>
+              </div>
               <div className="wf-connector"><div className="wf-line" /><div className="wf-node" /><div className="wf-line" /></div>
-              <div className="wf-card"><img src="assets/tiktok-shop-ganhos.png" alt="Comissões" /><div className="wf-caption">Comissões</div></div>
+              <div className="wf-card">
+                <picture>
+                  <source srcSet="assets/tiktok-shop-ganhos-480.webp 480w, assets/tiktok-shop-ganhos.webp 546w" sizes="300px" type="image/webp" />
+                  <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} />
+                </picture>
+                <div className="wf-caption">Comissões</div>
+              </div>
             </div>
           </ScrollReveal>
         </div>
