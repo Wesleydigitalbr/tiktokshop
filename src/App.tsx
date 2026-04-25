@@ -220,18 +220,6 @@ function App() {
         @keyframes pulseDot { 0%, 100% { box-shadow: 0 0 8px rgba(167,139,113,0.4); } 50% { box-shadow: 0 0 16px rgba(167,139,113,0.7); } }
         .pill span { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; }
 
-        .live-pill { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-glass); backdrop-filter: blur(10px); border: 1px solid var(--border-glass); border-radius: 100px; padding: 8px 16px; margin-bottom: 24px; }
-        .live-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: livePulse 2s ease-in-out infinite; }
-        .live-text { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; color: #4ade80; text-transform: uppercase; letter-spacing: 0.1em; }
-        .live-status { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; color: var(--text-secondary); }
-        @keyframes livePulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(74,222,128,0); } }
-
-        .proof-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 40px; }
-        .pill { display: flex; align-items: center; gap: 8px; background: var(--bg-glass); backdrop-filter: blur(10px); border: 1px solid var(--border-glass); border-radius: 100px; padding: 10px 18px; }
-        .pill-dot { width: 8px; height: 8px; background: var(--gold-base); border-radius: 50%; box-shadow: 0 0 8px rgba(167,139,113,0.5); animation: pulseDot 2s ease-in-out infinite; }
-        @keyframes pulseDot { 0%, 100% { box-shadow: 0 0 8px rgba(167,139,113,0.4); } 50% { box-shadow: 0 0 16px rgba(167,139,113,0.7); } }
-        .pill span { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; }
-
         section { position: relative; z-index: 1; }
         .section-problema, .section-mecanismo, .section-bonus, .section-garantia { padding: 60px 0; background: var(--bg-primary); }
         .section-historia { padding: 60px 0; background: #0c0c0c; }
@@ -468,10 +456,9 @@ function App() {
                   sizes="(max-width: 639px) 480px, 460px"
                   type="image/webp"
                 />
-                <img
-                  src="assets/proof-image.png"
+                <img src="assets/proof-image.png"
                   alt="Prova social - Método CAC"
-                  loading="lazy"
+                  fetchPriority="high" decoding="async"
                   width="460"
                   height="240"
                   style={{
@@ -525,21 +512,21 @@ function App() {
               <div className="satellite-card satellite-left glass glass-hover">
                 <picture>
                   <source srcSet="assets/tiktok-shop-page-480.webp 480w, assets/tiktok-shop-page.webp 637w" sizes="(max-width: 639px) 300px, 220px" type="image/webp" />
-                  <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" loading="lazy" width="220" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} />
+                  <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" loading="lazy" width="220" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} decoding="async" />
                 </picture>
                 <div className="satellite-card-caption">TikTok Shop</div>
               </div>
               <div className="satellite-card satellite-right glass glass-hover">
                 <picture>
                   <source srcSet="assets/satellite-2-480.webp 480w, assets/satellite-2.webp 800w" sizes="(max-width: 639px) 300px, 220px" type="image/webp" />
-                  <img src="assets/satellite-2.jpg" alt="IA Generativa" loading="lazy" width="220" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} />
+                  <img src="assets/satellite-2.jpg" alt="IA Generativa" loading="lazy" width="220" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} decoding="async" />
                 </picture>
                 <div className="satellite-card-caption">IA Generativa</div>
               </div>
               <div className="satellite-card satellite-bottom glass glass-hover" style={{ width: 180 }}>
                 <picture>
                   <source srcSet="assets/tiktok-shop-ganhos-480.webp 480w, assets/tiktok-shop-ganhos.webp 546w" sizes="(max-width: 639px) 300px, 180px" type="image/webp" />
-                  <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" loading="lazy" width="180" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} />
+                  <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" loading="lazy" width="180" height="140" style={{ width: '100%', height: 140, objectFit: 'cover', display: 'block' }} decoding="async" />
                 </picture>
                 <div className="satellite-card-caption">Comissões</div>
               </div>
@@ -552,7 +539,7 @@ function App() {
               <div className="wf-card">
                 <picture>
                   <source srcSet="assets/tiktok-shop-page-480.webp 480w, assets/tiktok-shop-page.webp 637w" sizes="300px" type="image/webp" />
-                  <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} />
+                  <img src="assets/tiktok-shop-page.png" alt="TikTok Shop" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} decoding="async" />
                 </picture>
                 <div className="wf-caption">TikTok Shop</div>
               </div>
@@ -560,7 +547,7 @@ function App() {
               <div className="wf-card">
                 <picture>
                   <source srcSet="assets/satellite-2-480.webp 480w, assets/satellite-2.webp 800w" sizes="300px" type="image/webp" />
-                  <img src="assets/satellite-2.jpg" alt="IA Generativa" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} />
+                  <img src="assets/satellite-2.jpg" alt="IA Generativa" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} decoding="async" />
                 </picture>
                 <div className="wf-caption">IA Generativa</div>
               </div>
@@ -568,7 +555,7 @@ function App() {
               <div className="wf-card">
                 <picture>
                   <source srcSet="assets/tiktok-shop-ganhos-480.webp 480w, assets/tiktok-shop-ganhos.webp 546w" sizes="300px" type="image/webp" />
-                  <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} />
+                  <img src="assets/tiktok-shop-ganhos.png" alt="Comissões" loading="lazy" width="300" height="200" style={{ width: '100%', height: 'auto', maxHeight: 200, objectFit: 'contain', display: 'block' }} decoding="async" />
                 </picture>
                 <div className="wf-caption">Comissões</div>
               </div>

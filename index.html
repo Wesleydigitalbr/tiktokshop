@@ -1,28 +1,50 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Metodo CAC</title>
+    <title>Método CAC — TikTok Shop com IA</title>
+    <meta name="description" content="Aprenda a vender no TikTok Shop usando IA, sem aparecer em câmera e sem investir em anúncios. Método CAC por Wesley Oliveira." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+
+    <!-- Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://cdn.utmify.com.br" />
+    <link rel="dns-prefetch" href="https://cdn.utmify.com.br" />
+
+    <!-- Preload hero image (LCP) -->
+    <link rel="preload" as="image" href="assets/proof-image.webp" type="image/webp" media="(min-width: 640px)" />
+    <link rel="preload" as="image" href="assets/proof-image-480.webp" type="image/webp" media="(max-width: 639px)" />
+
+    <!-- Inline Critical CSS -->
     <style>
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      :root{--bg-primary:#0a0a0a;--bg-glass:rgba(255,255,255,0.03);--border-glass:rgba(255,255,255,0.1);--border-glass-hover:rgba(255,255,255,0.2);--gold-base:#a78b71;--gold-light:#c9b8a0;--gold-hover:#e8d5b7;--text-primary:#ffffff;--text-secondary:#a0a0a0;--text-muted:#666666;--ease-out:cubic-bezier(0.4,0,0.2,1)}
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+      body::before{content:"";position:fixed;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(circle,rgba(255,255,255,0.08) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;z-index:0}
+      .container{max-width:720px;margin:0 auto;padding-left:20px;padding-right:20px;position:relative;z-index:1}
+      .glass{background:var(--bg-glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--border-glass);border-radius:24px}
+      .glass-hover{transition:all .3s var(--ease-out)}
+      .tag{display:inline-block;background:rgba(167,139,113,0.1);border:1px solid rgba(167,139,113,0.3);border-radius:100px;padding:6px 16px;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:var(--gold-base);text-transform:uppercase;letter-spacing:.15em;margin-bottom:24px}
+      .section-title{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.2;color:var(--text-primary);margin-bottom:32px}
+      .section-title .gold{color:var(--gold-base)}
+      .topbar{position:fixed;top:0;left:0;width:100%;height:64px;background:rgba(10,10,10,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-glass);z-index:1000;display:flex;align-items:center;transition:box-shadow .2s ease}
+      .topbar-logo{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none}
+      .topbar-logo span{color:var(--gold-base)}
+      .hero{position:relative;min-height:auto;padding-top:85px;padding-bottom:20px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden}
+      .hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(167,139,113,0.12) 0%,transparent 70%);pointer-events:none;z-index:0}
+      .hero h1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.15;color:var(--text-primary);margin-bottom:20px}
+      .hero h1 .gold{color:var(--gold-base)}
+      .hero-subtitle{font-family:'Inter',sans-serif;font-size:15px;font-weight:300;line-height:1.7;color:var(--text-secondary);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto}
+      .hero-ctas{display:flex;flex-direction:column;gap:12px;align-items:center}
+      @media(min-width:640px){.hero-ctas{flex-direction:row;justify-content:center}}
+      .hero-cta-text{font-family:'Inter',sans-serif;font-size:12px;color:var(--text-muted);margin-top:16px;letter-spacing:.02em}
+      section{position:relative;z-index:1}
       /* Remove Kimi Agent badge */
-      [class*="kimi" i],
-      [id*="kimi" i],
-      [class*="Kimi" i],
-      [id*="Kimi" i],
-      [data-testid*="kimi" i],
-      [data-testid*="Kimi" i] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        position: absolute !important;
-        z-index: -9999 !important;
-        width: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-      }
+      [class*="kimi" i],[id*="kimi" i],[class*="Kimi" i],[id*="Kimi" i],[data-testid*="kimi" i],[data-testid*="Kimi" i]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;position:absolute!important;z-index:-9999!important;width:0!important;height:0!important;overflow:hidden!important}
     </style>
+
+    <!-- Anti-Kimi Script (critical, runs immediately) -->
     <script>
       (function() {
         function removeKimiElements() {
@@ -49,24 +71,27 @@
       })();
     </script>
 
-    <!-- UTMify Pixel -->
+    <!-- Deferred Tracking Scripts -->
     <script>
-      window.pixelId = "69ec924aba3eb94f3681be30";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-      document.head.appendChild(a);
-    </script>
+      window.addEventListener('load', function() {
+        // UTMify Pixel
+        window.pixelId = "69ec924aba3eb94f3681be30";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
 
-    <!-- UTMify Tracking -->
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-    ></script>
+        // UTMify Tracking
+        var b = document.createElement("script");
+        b.setAttribute("src", "https://cdn.utmify.com.br/scripts/utms/latest.js");
+        b.setAttribute("data-utmify-prevent-xcod-sck", "");
+        b.setAttribute("data-utmify-prevent-subids", "");
+        b.setAttribute("async", "");
+        b.setAttribute("defer", "");
+        document.head.appendChild(b);
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
