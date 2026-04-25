@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodo CAC</title>
+    <style>
+      /* Remove Kimi Agent badge */
+      [class*="kimi" i],
+      [id*="kimi" i],
+      [class*="Kimi" i],
+      [id*="Kimi" i],
+      [data-testid*="kimi" i],
+      [data-testid*="Kimi" i] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        z-index: -9999 !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+      }
+    </style>
+    <script>
+      (function() {
+        function removeKimiElements() {
+          var selectors = '[class*="kimi" i], [id*="kimi" i], [class*="Kimi" i], [id*="Kimi" i], [data-testid*="kimi" i], [data-testid*="Kimi" i]';
+          var elements = document.querySelectorAll(selectors);
+          elements.forEach(function(el) {
+            if (el && el.parentNode) {
+              el.parentNode.removeChild(el);
+            }
+          });
+        }
+        removeKimiElements();
+        var observer = new MutationObserver(function(mutations) {
+          removeKimiElements();
+        });
+        if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+        } else {
+          document.addEventListener('DOMContentLoaded', function() {
+            removeKimiElements();
+            observer.observe(document.body, { childList: true, subtree: true });
+          });
+        }
+      })();
+    </script>
+
+    <!-- UTMify Pixel -->
+    <script>
+      window.pixelId = "69ec924aba3eb94f3681be30";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+
+    <!-- UTMify Tracking -->
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
